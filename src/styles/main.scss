@@ -1,0 +1,360 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,700;1,700&family=Jost:wght@400;500&display=swap');
+
+$green: #27300f;
+$orange: #d26a22;
+$white: #ffffff;
+
+$font-jost: 'Jost', sans-serif;
+$font-cormorant: 'Cormorant', serif;
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: $font-jost;
+    color: $green;
+    overflow-x: hidden;
+}
+
+.header {
+    max-width: 1440px;
+    margin: 0 auto 4.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3.9rem 0 0 15px;
+
+    &__nav {
+        display: flex;
+        list-style-type: none;
+        margin: 0;
+        padding-left: 0.3rem;
+        gap: 4.8rem;
+        margin-left: -13rem;
+    }
+
+    &__link {
+        color: $green;
+        text-decoration: none;
+        &:hover {
+            color: $orange;
+        }
+    }
+
+    &__tel {
+        color: #27300f;
+        font-weight: 600;
+        text-decoration: none;
+        letter-spacing: 0.13rem;
+        &:hover {
+            color: $orange;
+        }
+    }
+
+    &__cart {
+        display: block;        
+        height: 4rem;
+        width: 4rem;        
+        border-radius: 100%;
+        background-color: $orange;
+        background-image: url(../images/cart.svg);
+        background-size: 1.6rem 1.4rem;
+        background-repeat: no-repeat;
+        background-position: center center;
+        position: relative;
+        border: 0.1rem solid $orange;
+        &:hover {
+            background-color: $green;
+            border: 0.1rem solid $green;
+            }
+        }
+
+    &__flex {
+        display: flex;
+        gap: 7.7rem;
+        align-items: center;
+        justify-content: space-between;
+    }
+        
+
+
+    &__counter {
+        font-size: 0.8rem;
+        color: $white;
+        position: absolute;
+        right: 0.6rem;
+        top: 0.6rem;
+    }
+
+}
+
+
+.logo {
+    display: block;
+    background-image: url(../images/logo.svg);
+    width: 12rem;
+    height: 3.2rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding-left: 15px;
+}
+
+.main {
+    background-image: url(../images/main.png);
+    background-size: cover;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    position: relative;
+    padding-bottom: 187px;
+    z-index: 0;
+
+    &__item {
+        margin-left: 12rem;
+        max-width: 37.8rem;
+        margin-top: 6.2rem;
+
+    }
+
+    &__link {
+        margin-top: 5rem;
+    }
+
+    &__flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+    }
+
+    &__cover {
+        flex-basis: 758px;
+        height: 758px;
+        border: 1px solid rgba($green, 0.4);
+        border-radius: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    &__line {
+        width: 656px;
+        height: 656px;
+        border: 1px solid rgba($green, 0.4);
+        border-radius: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+    }
+
+    &__image {
+        width: 90%;
+        position: absolute;
+        top: 80px;
+        left: 75px;
+    }
+
+    &__text {
+        padding-top: 4rem;
+        line-height: 1;
+    }
+
+    &__btn {
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        position: absolute;
+        color: $green;
+        text-align: left;
+        &:hover {
+            &::before {
+                background-color: $orange;
+                box-shadow: 0 0 0 4px $white, 0 0 0 5px $orange;
+            }
+            
+        }
+
+        &::before {
+            content: '';
+            background-color: $green;
+            width: 11px;
+            height: 11px;
+            box-shadow: 0 0 0 4px $white, 0 0 0 5px $green;
+            border-radius: 100%;
+            position: absolute;
+        }
+
+        &_01 {
+            top: 43px;
+            left: 62px;
+            line-height: 1.5;
+            &::before {
+                top: 25px;
+                left: 85px;
+            }
+        }
+
+        &_02 {
+            bottom: -53px;
+            right: 243px;
+            line-height: 1.5;
+            &::before {
+                top: -21px;
+                left: 13px;
+            }
+        }
+
+        &_03 {
+            top: 192px;
+            right: 2px;
+            line-height: 1.5;
+            &::before {
+                top: 19px;
+                left: -26px;
+            }
+        }
+    }
+
+    &__food {
+        display: block;
+        color: rgba($green, 0.8);
+    }
+
+    &__tomato {
+        position: absolute;
+        bottom: 115px;
+        right: 105px;
+        width: 11rem;
+        z-index: -1;
+    }
+
+    &__avocado {
+        position: absolute;
+        top: 44px;
+        right: -33px;
+        width: 19.4rem;
+        z-index: -1;
+    }
+
+    &__cucumber {
+        position: absolute;
+        top: -50px;
+        left: 690px;
+        width: 8.5rem;
+        z-index: -1;
+    }
+
+    &__pepper {
+        position: absolute;
+        top: 398px;
+        left: 38px;
+        width: 8.6rem;
+        z-index: -1;
+    }
+
+    &__beans {
+        position: absolute;
+        bottom: 160px;
+        left: -33px;
+        width: 13.8rem;
+        z-index: -1;
+    }
+}
+
+.title {
+    font-family: $font-cormorant;
+    font-weight: 700;
+    font-size: 8rem;
+    margin: 0;
+
+    &__span {
+        font-style: italic;
+    }
+
+    &_block {
+        .title__span {
+            display: block;
+        }
+    }
+}
+
+.description {
+    margin: 0;
+    line-height: 1.5;
+    &_size_s {
+        font-size: 1.8rem;
+        line-height: 1.5;
+    }
+
+    &_size_m {
+        font-size: 2.4rem;
+        line-height: 1.5;
+    }
+}
+
+.link {
+    color: $white;
+    letter-spacing: 0.13rem;
+    text-transform: uppercase;
+    padding: 2.4rem 4.3rem;
+    background-color: $orange;
+    box-shadow: 0px 1rem 1.1rem 0.2rem rgba(207, 92, 13, 0.2); 
+    text-decoration: none;   
+    border-radius: 3.8rem;
+    display: inline-block;
+}
+
+.offer {
+    background-image: url(../images/offer_bg.png);
+    background-size: cover;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    padding-top: 2.2rem;
+    line-height: 1;
+    padding-bottom: 200px;
+    
+    &__text {
+        max-width: 690px;
+        margin-top: 5.8rem;
+    }
+
+    &__slider {
+        overflow: hidden;
+        padding-top: 100px;
+    }
+}
+
+.swiper {
+    overflow: initial;
+    &-slide{
+        border: 1px solid $green;
+        box-sizing: border-box;
+    }
+
+    &-pagination {
+        display: none;
+    }
+
+    &-button-prev, &-button-next {
+        top: -60px;
+        &::after {
+            color: $green;
+            font-size: 20px;
+        }
+    }
+
+    &-button-prev {
+        left: initial;
+        right: 100px;
+    }
+}
