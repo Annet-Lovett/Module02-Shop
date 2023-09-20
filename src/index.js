@@ -9,7 +9,7 @@ import { Navigation, Pagination } from 'swiper/modules';
 
 var swiper = new Swiper(".offerSwiper", {
         slidesPerView: 3,
-        spaceBetween: 30,
+        spaceBetween: 25,
         slidesPerGroup: 3,
         loop: true,
         loopFillGroupWithBlank: true,
