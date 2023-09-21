@@ -6,7 +6,7 @@ const devServer = (isDev) => !isDev ? {} : {
     devServer: {
         open: true,
         hot: true,
-        port: 4925,
+        port: 9925,
     }
 }
 
@@ -24,9 +24,9 @@ module.exports = ({develop}) => ({
             template: './src/index.html'
         }),
 
-    new MiniCssExtractPlugin ({
-        filename: './styles/main.css'
-    })
+        new MiniCssExtractPlugin ({
+            filename: './styles/main.css'
+        })
 
     ],
 
