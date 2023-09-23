@@ -288,7 +288,7 @@ body {
 
     &_block {
 
-        margin-left: -4px;
+        margin-left: -2px;
 
         .title__span {
             display: block;
@@ -325,6 +325,7 @@ body {
     text-decoration: none;   
     border-radius: 3.8rem;
     display: inline-block;
+    border: none;
     &_max {
         padding: 2.4rem 5.1rem;
     }
@@ -782,7 +783,7 @@ h1 {
     }
 }
 
-.pay {
+.delivery {
     margin-top: 14.1rem;
     margin-left: -1.5rem;
     &__flex {
@@ -859,4 +860,129 @@ h1 {
     }
 }
 
+.contact {
+    margin-top: 18.6rem;
+    &-box {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
 
+        &__text {
+            max-width: 40rem;
+            flex-grow: 1;
+            margin-top: 6.3rem;
+            margin-left: 12.2rem;
+            letter-spacing: 0.09rem;
+            line-height: 1.67;
+        }
+        &__form {
+            flex-basis: 58.9rem;
+            margin-top: -1.1rem;
+        }
+
+        &__ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 5.2rem;
+        }
+
+        &__li {
+            margin-top: 1rem;
+        }
+
+        &__link {
+            text-decoration: none;
+            font-size: 2.4rem;
+            color: $green;
+            font-weight: 600;
+            &::before {
+                content: "";
+                display: inline-block;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                vertical-align: middle;
+                margin-right: 3rem; 
+            }
+            &_tel {
+                &::before {     
+                    content: "";           
+                    background-image: url(../images/tel.svg);
+                    width: 2.9rem;
+                    height: 2.5rem;
+                }
+            }
+
+            &_mail {
+                &::before {
+                    content: "";
+                    background-image: url(../images/mail.svg);
+                    width: 2.9rem;
+                    height: 1.9rem;
+                }
+            }
+        }
+    }
+}
+
+.card {
+    border: 2px solid rgba($green, 0.4);
+    border-radius: 2rem;
+    padding-top: 3.3rem;
+    padding-left: 5.4rem;
+
+    &__form {
+        margin-left: 0.5rem;
+    }
+
+    &__title {
+        font-size: 3rem;
+        font-family: $font-cormorant;  
+        margin-top: 0;
+        margin-left: 0.4rem;
+    }
+
+    &__label {
+        font-size: 1.2rem;
+        display: block;
+        margin: 0.4rem 0 0.8rem 0.5rem;
+    }
+
+    &__input {
+        border: 1px solid rgba($green, 0.4);
+        display: block;
+        height: 6rem;
+        width: 43.5rem;
+        border-radius: 2rem;
+        margin-bottom: 3.2rem;
+        padding-left: 3rem;
+        &:focus {
+            outline: none;
+            border: 1px solid rgba($green, 1);
+        }
+        &:invalid {
+            outline: none;
+            border: 1px solid rgba(#f50c0d, 1);
+        }
+    }
+
+    &_link {
+        padding: 2.4rem 4.8rem;
+        margin-top: 1.1rem;
+        cursor: pointer;
+    }
+
+    &__check {
+        font-size: 1.2rem;
+        color: rgba($green, 0.6);
+        line-height: 1.5;
+        max-width: 36rem;
+        margin-top: 1.4rem;
+        margin-bottom: 4rem;
+    }
+    &__link {
+        color: rgba($green, 0.6);
+        text-decoration: none;
+        border-bottom: 1px solid #e8e8e7;
+    }
+}
