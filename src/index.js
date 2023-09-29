@@ -25,6 +25,11 @@ var swiper = new Swiper(".offerSwiper", {
         modules: [Navigation, Pagination],
 
         breakpoints: {
+            100: {
+                slidesPerView: 1,
+                slidesPerGroup: 1,
+                spaceBetween: 20
+            },
             320: {
                 slidesPerView: 1,
                 slidesPerGroup: 1,
@@ -62,17 +67,17 @@ var swiper = new Swiper(".trendsSwiper", {
         modules: [Navigation, Pagination],
 
         breakpoints: {
-            320: {
+            100: {
                 slidesPerView: 1,
                 slidesPerGroup: 1,
                 spaceBetween: 20
             },
-            768: {
+            320: {
                 slidesPerView: 2,
                 slidesPerGroup: 2,
                 spaceBetween: 20
             },
-            1000: {
+            768: {
                 slidesPerView: 3,
                 slidesPerGroup: 3,
                 spaceBetween: 20
