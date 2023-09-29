@@ -3,9 +3,26 @@
 $green: #27300f;
 $orange: #d26a22;
 $white: #ffffff;
+$dark-orange: #bf601f;
 
 $font-jost: 'Jost', sans-serif;
 $font-cormorant: 'Cormorant', serif;
+
+$r_minmob: 320px;
+$r_mob360: 360px;
+$r_mob360: 400px;
+$r_mob360: 500px;
+$r_mob360: 600px;
+$r_tab: 768px;
+$r_tab_900: 900px;
+$r_desk: 1000px;
+$r_desk_1120: 1120px;
+$r_desk_hd: 1200px;
+$r_desk_1280: 1280px;
+$r_desk_1350: 1350px;
+$r_desk_1400: 1400px;
+$r_desk_ful_1750: 1750px;
+
 
 html {
     font-size: 10px;
@@ -16,6 +33,9 @@ body {
     font-family: $font-jost;
     color: $green;
     overflow-x: hidden;
+    background-image: url(../images/body-bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .header {
@@ -24,7 +44,25 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 3.9rem 0 0 15px;
+    padding: 3.9rem 0px 0 15px;
+    gap: 5.4%;
+    @media (max-width: $r_desk_1280) {
+        gap: 3.5%;
+    }
+
+    &__navigation {
+        flex-grow: 1;        
+        margin-left: 4rem;
+        @media (max-width: $r_desk_1280) {
+            margin-left: 0;
+        }
+        @media (max-width: $r_desk_hd) {
+            flex-grow: 0;
+        }
+        @media (max-width: $r_tab_900) {
+            display: none;
+        }
+    }
 
     &__nav {
         display: flex;
@@ -32,15 +70,25 @@ body {
         margin: 0;
         padding-left: 0.3rem;
         gap: 4.8rem;
-        margin-left: -13rem;
+        @media (max-width: $r_desk_hd) {
+            gap: 2.5rem;
+        }
     }
 
     &__link {
         color: $green;
         text-decoration: none;
+        transition: 0.3s;
         &:hover {
             color: $orange;
         }
+    }
+
+    &__flex {
+        display: flex;
+        flex-basis: 27.3rem;
+        align-items: center;
+        justify-content: space-between;
     }
 
     &__tel {
@@ -50,6 +98,9 @@ body {
         letter-spacing: 0.13rem;
         &:hover {
             color: $orange;
+        }
+        @media (max-width: $r_desk_hd) {
+            display: none;
         }
     }
 
@@ -64,21 +115,27 @@ body {
         background-repeat: no-repeat;
         background-position: center center;
         position: relative;
-        border: 0.1rem solid $orange;
+        border: 1px solid $orange;
+        padding: 0;
+        transition: 0.3s;
+        cursor: pointer;
         &:hover {
             background-color: $green;
-            border: 0.1rem solid $green;
+            border: 1px solid $green;
+            @media (max-width: $r_desk_hd) {
+                background-color: $white;
+                opacity: 1;
             }
+            }        
+        @media (max-width: $r_desk_hd) {
+            background-color: $white;
+            background-image: url(../images/cart-green.svg);
+            border: 1px solid $green;
+            opacity: 0.8;
         }
-
-    &__flex {
-        display: flex;
-        gap: 7.7rem;
-        align-items: center;
-        justify-content: space-between;
     }
-        
 
+        
 
     &__counter {
         font-size: 0.8rem;
@@ -86,6 +143,66 @@ body {
         position: absolute;
         right: 0.6rem;
         top: 0.6rem;
+        @media (max-width: $r_desk_hd) {
+            color: $green;
+        }
+    }
+
+    &__phone, &__menu {
+        display: none;
+    }
+
+    &__phone {
+        @media (max-width: $r_desk_hd) {
+            display: block;        
+            height: 4rem;
+            width: 4rem;        
+            border-radius: 100%;
+            background-color: $white;
+            background-image: url(../images/phone.svg);
+            background-size: 1.6rem 1.4rem;
+            background-repeat: no-repeat;
+            background-position: center center;
+            position: relative;
+            border: 0.1rem solid $green;
+            padding: 0;
+            transition: 0.3s;
+            opacity: 0.8;
+        }
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    &__menu {
+        @media (max-width: $r_tab_900) {
+            display: block;        
+            height: 4rem;
+            width: 4rem;        
+            border-radius: 100%;
+            background-color: $white;
+            background-image: url(../images/menu.svg);
+            background-size: 1.6rem 1.4rem;
+            background-repeat: no-repeat;
+            background-position: center center;
+            position: relative;
+            border: 0.1rem solid $green;
+            padding: 0;
+            transition: 0.3s;
+            opacity: 0.8;
+            cursor: pointer;
+        }
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    &__buttons {
+        @media(max-width: $r_desk_hd) {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
     }
 
 }
@@ -94,13 +211,14 @@ body {
 .logo {
     display: block;
     background-image: url(../images/logo.svg);
-    width: 12rem;
+    flex-basis: 12rem;
     height: 3.2rem;
     background-repeat: no-repeat;
     background-size: contain;
+    transform: scale(1);        
+    transition: 0.3s;
     &:hover {
         transform: scale(1.13, 1.125);
-        transition: 0.4s;
     }
 }
 
@@ -108,26 +226,43 @@ body {
     max-width: 1440px;
     margin: 0 auto;
     padding-left: 15px;
+    padding-right: 15px;
+    @media (max-width: $r_tab) {
+        max-width: 600px;
+    }
 }
 
 .main {
-    background-image: url(../images/main.png);
-    background-size: cover;
-    background-position-x: center;
-    background-repeat: no-repeat;
     position: relative;
-    padding-bottom: 187px;
+    padding-bottom: 18.7rem;
     z-index: 0;
+    @media (max-width: $r_desk_1120) {
+        padding-bottom: 0;
+    }
 
     &__item {
         margin-left: 12rem;
         max-width: 37.8rem;
         margin-top: 6.2rem;
-
+        @media (max-width: $r_desk_1280) {
+            margin-left: 8rem;
+        }
+        @media (max-width: $r_desk_1120) {
+            margin-left: 4rem;
+        }
+        @media (max-width: $r_tab) {
+            max-width: 100%;
+            margin-left: 0;
+            text-align: center;
+            margin-top: 3rem;
+        }
     }
 
     &__link {
         margin-top: 5rem;
+        @media (max-width: $r_tab) {
+            text-align: center;
+        }
     }
 
     &__flex {
@@ -135,6 +270,10 @@ body {
         justify-content: space-between;
         align-items: center;
         gap: 30px;
+        @media (max-width: $r_desk_1120) {
+            padding-top: 3rem;
+            padding-bottom: 9rem;
+        }
     }
 
     &__cover {
@@ -147,6 +286,25 @@ body {
         justify-content: center;
         align-items: center;
         position: relative;
+        @media (max-width: $r_desk_1350) {
+            flex-basis: 650px;
+            height: 650px;
+        }
+
+        @media (max-width: $r_desk_hd) {
+            flex-basis: 600px;
+            height: 600px;
+        }
+
+        @media (max-width: $r_desk_1120) {
+            border: 1px solid transparent;
+            height: auto;
+            flex-basis: calc(100% - 395px);
+        }
+
+        @media (max-width: $r_tab) {
+            display: none;
+        }
     }
 
     &__line {
@@ -159,18 +317,45 @@ body {
         justify-content: center;
         text-align: center;
         align-items: center;
+        @media (max-width: $r_desk_1350) {
+            width: 600px;
+            height: 600px;
+        }
+        @media (max-width: $r_desk_hd) {
+            border: 1px solid transparent;
+            width: auto;
+            height: auto;
+        }
     }
 
     &__image {
-        width: 90%;
-        position: absolute;
-        top: 80px;
-        left: 75px;
+        width: 93%;
+        border-radius: 100%;
+        animation: shadow 5s linear infinite;
+    }
+
+    &__imagemobi {
+        display: none;
+        @media (max-width: $r_tab) {
+            display: block;
+            max-width: 300px;
+            margin: 0 auto;
+            margin-top: 3rem;
+            animation: shadow 5s linear infinite;
+            border-radius: 100%;
+        }
     }
 
     &__text {
         padding-top: 4rem;
-        line-height: 1;
+        line-height: 1;  
+        @media (max-width: $r_desk_1120) {
+            flex-basis: 395px;
+        }        
+        @media (max-width: $r_tab) {
+            flex-basis: 100%;
+            padding-top: 0;
+        }      
     }
 
     &__btn {
@@ -196,12 +381,20 @@ body {
             box-shadow: 0 0 0 4px $white, 0 0 0 5px $green;
             border-radius: 100%;
             position: absolute;
+            transition: 0.3s;
         }
 
         &_01 {
             top: 43px;
             left: 62px;
             line-height: 1.5;
+            @media (max-width: $r_desk_hd) {
+                top: 20px;
+                left: 42px;
+            }
+            @media (max-width: $r_desk_1120) {
+                display: none;
+            }
             &::before {
                 top: 25px;
                 left: 85px;
@@ -212,6 +405,12 @@ body {
             bottom: -53px;
             right: 243px;
             line-height: 1.5;
+            @media (max-width: $r_desk_1350) {
+                bottom: -63px;
+            }
+            @media (max-width: $r_desk_1120) {
+                display: none;
+            }
             &::before {
                 top: -21px;
                 left: 13px;
@@ -222,6 +421,16 @@ body {
             top: 192px;
             right: 2px;
             line-height: 1.5;
+            @media (max-width: $r_desk_1350) {
+                top: 109px;
+            }
+            @media (max-width: $r_desk_hd) {
+                top: 42px;
+                right: 14px;
+            }
+            @media (max-width: $r_desk_1120) {
+                display: none;
+            }
             &::before {
                 top: 19px;
                 left: -26px;
@@ -240,6 +449,12 @@ body {
         right: 105px;
         width: 11rem;
         z-index: -1;
+        @media (max-width: $r_desk_1280) {
+            right: 10px;
+        }
+        @media (max-width: $r_desk_1120) {
+            bottom: -30px;
+        }
     }
 
     &__avocado {
@@ -248,6 +463,18 @@ body {
         right: -33px;
         width: 19.4rem;
         z-index: -1;
+        @media (max-width: $r_desk_ful_1750) {
+            width: 11.8rem;
+            right: -10px;
+            top: 110px;
+        }
+        @media (max-width: $r_desk_1280) {
+            top: 100px;
+        }
+        @media (max-width: $r_tab) {
+            right: -50px;
+            top: 150px;
+        }
     }
 
     &__cucumber {
@@ -264,6 +491,9 @@ body {
         left: 38px;
         width: 8.6rem;
         z-index: -1;
+        @media (max-width: $r_desk_ful_1750) {
+            display: none;
+        }
     }
 
     &__beans {
@@ -272,6 +502,9 @@ body {
         left: -33px;
         width: 13.8rem;
         z-index: -1;
+        @media (max-width: $r_desk_1120) {
+            bottom: 30px;
+        }
     }
 }
 
@@ -281,7 +514,15 @@ body {
     font-size: 8rem;
     margin: 0;
     line-height: 1;
-
+    @media (max-width: $r_desk_1280) {
+        font-size: 7rem;
+    }
+    @media (max-width: $r_desk_1120) {
+        font-size: 6rem;
+    }
+    @media (max-width: $r_tab) {
+        text-align: center;
+    }
     &__span {
         font-style: italic;
     }
@@ -304,14 +545,23 @@ body {
 .description {
     margin: 0;
     line-height: 1.5;
+    @media (max-width: $r_tab) {
+        text-align: center;
+    }
     &_size_s {
         font-size: 1.8rem;
         line-height: 1.5;
+        @media (max-width: $r_desk_1280) {
+            font-size: 1.6rem;
+        }
     }
 
     &_size_m {
         font-size: 2.4rem;
         line-height: 1.5;
+        @media (max-width: $r_desk_1280) {
+            font-size: 2.2rem;
+        }
     }
 }
 
@@ -326,8 +576,19 @@ body {
     border-radius: 3.8rem;
     display: inline-block;
     border: none;
+    transition: 0.3s;
+    @media (max-width: $r_desk_1280) {
+        font-size: 1.4rem;
+    }
+    &:hover {
+        background-color: $dark-orange;
+    }
     &_max {
         padding: 2.4rem 5.1rem;
+        @media (max-width: $r_desk_1400) {
+            padding: 1.9rem 3.8rem;
+            font-size: 1.4rem;
+        }
     }
     &_min {
         padding: 2rem 3.3rem;
@@ -337,24 +598,32 @@ body {
 }
 
 .offer {
-    background-image: url(../images/offer_bg.png);
-    background-size: cover;
-    background-position-x: center;
-    background-repeat: no-repeat;
     padding-top: 2.2rem;
     line-height: 1;
     padding-bottom: 16.4rem;
+    @media (max-width: $r_desk_1280) {
+        padding-bottom: 8rem;
+    }
     
     &__text {
         max-width: 690px;
         margin-top: 5.8rem;
+        @media (max-width: $r_tab) {
+            text-align: center;
+        }
     }
 
 }
 
 .slider {
     overflow: hidden;
-    padding-top: 73px;
+    padding-top: 7.3rem;
+    @media (max-width: $r_tab) {
+        max-width: 450px;
+        margin: 0 auto;
+        padding-top: 3.3rem;
+        padding-bottom: 6rem;
+    }
 }
 
 .swiper {
@@ -368,12 +637,19 @@ body {
         background-repeat: no-repeat;
         background-size: cover;
         position: relative;
+        @media (max-width: $r_desk_1280) {
+            padding: 3rem 1.9rem 4.2rem;
+        }
         &_white {  
             display: flex;
             flex-direction: column;
             justify-content: space-between;      
             height: 520px;        
             justify-content: flex-end;
+            background-size: contain;
+            @media (max-width: $r_desk_hd) {
+                height: 400px;
+            }
             &:hover {
                 .swiper-slide__hover {
                     height: 233px;
@@ -416,7 +692,11 @@ body {
             color: $green;
             margin-bottom: 0;
             margin-top: 3rem;
-            margin-left: 0.2rem;            
+            margin-left: 0.2rem;    
+            @media (max-width: $r_desk_1120) {
+                min-height: 70px;
+                margin-top: 1rem;
+            }        
 
         }
 
@@ -427,6 +707,9 @@ body {
             line-height: 1.5;
             margin-left: 0.2rem;
             min-height: 5.5rem;
+            @media (max-width: $r_desk_1120) {
+                min-height: 108px;
+            }  
         }
 
         &__price {
@@ -482,6 +765,9 @@ body {
             width: 100%;
             height: 322px;
             text-align: center;
+            @media (max-width: $r_desk) {
+                height: 222px;
+            }  
         }
 
         &__image {
@@ -497,17 +783,28 @@ body {
             align-items: center;
             margin-top: 3.3rem;
             margin-left: 0.1rem;
+            @media (max-width: $r_desk_1280) {
+                gap: 2rem;
+                flex-direction: column;
+                align-items: flex-start;
+            }
         }
     }
 
     &-pagination {
         display: none;
+        @media (max-width: $r_tab) {
+            display: block;
+        }
     }
 
     &-button-prev, &-button-next {
         top: -6rem;
         right: -0.8rem;
         opacity: 0.4;
+        @media (max-width: $r_tab) {
+            display: none;
+        }
         &::after {
             color: $green;
             font-size: 20px;
@@ -521,6 +818,24 @@ body {
         left: initial;
         right: 7.2rem;
     }
+}
+
+
+.swiper-horizontal > .swiper-pagination-bullets {
+    bottom: -50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.swiper-pagination-bullet-active {
+    background: $orange;
+    border: 1px solid $orange;
+}
+
+.swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
 }
 
 .counter {
@@ -574,11 +889,29 @@ body {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        @media (max-width: $r_desk_1280) {
+            margin-top: 4rem;
+        }
+        @media (max-width: $r_tab_900) {
+            gap: 4rem;
+        }
+        @media (max-width: $r_tab) {
+            flex-direction: column;
+        }
     }
 
     &__text {
         flex-basis: 60rem;        
         margin-left: 12.1rem;
+        @media (max-width: $r_desk_1280) {
+            margin-left: 8rem;
+        }
+        @media (max-width: $r_desk_1120) {
+            margin-left: 4rem;
+        }
+        @media (max-width: $r_tab) {
+            flex-basis: 10rem;
+        }
     }
 
     &__list {
@@ -592,6 +925,9 @@ body {
         margin: 0;
         padding-left: 0;
         margin-top: -2.2rem;
+        @media (max-width: $r_desk_1120) {
+            gap: 4.7rem;
+        }
     }
 
     &__item {
@@ -635,6 +971,12 @@ body {
 
 .trends {
     margin-top: 17.8rem;
+    @media (max-width: $r_desk_1400) {
+        margin-top: 10rem;
+    }
+    @media (max-width: $r_desk) {
+        margin-top: 7rem;
+    }
     &__text {
         margin-top: 38px;
         margin-bottom: -11px;
@@ -842,9 +1184,12 @@ h1 {
         background-repeat: no-repeat;
         background-position: center;
         vertical-align: middle;
-        background-image: url(../images/mastercard.svg);          
-        opacity: 0.4;      
-        &:hover {
+        background-image: url(../images/mastercard.svg);
+        transform: scale(1);       
+        opacity: 0.4; 
+        transition: 0.3s;     
+        &:hover {            
+            transform: scale(1.05);
             opacity: 1;
         }
 
@@ -859,8 +1204,11 @@ h1 {
         background-position: center;
         vertical-align: middle;
         background-image: url(../images/visa.svg);
-        opacity: 0.4; 
+        transform: scale(1);
+        opacity: 0.4;
+        transition: 0.3s; 
         &:hover {
+            transform: scale(1.05);
             opacity: 1;
         }
     }
@@ -874,8 +1222,11 @@ h1 {
         background-position: center;
         vertical-align: middle;
         background-image: url(../images/paypall.svg);
+        transform: scale(1);
         opacity: 0.4; 
+        transition: 0.3s;
         &:hover {
+            transform: scale(1.05);
             opacity: 1;
         }
     }
@@ -905,6 +1256,7 @@ h1 {
             list-style-type: none;
             padding: 0;
             margin-top: 5.2rem;
+            letter-spacing: 0px;
         }
 
         &__li {
@@ -1025,12 +1377,8 @@ footer {
 }
 
 .footer {
-    background-image: url(../images/footer-bg-.png);
-    background-size: cover;
-    background-position-x: center;
-    background-repeat: no-repeat;
     &-box {
-        margin-top: 1.3rem;
+        margin-top: 1rem;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -1047,6 +1395,7 @@ footer {
         list-style-type: none;
         padding: 0;
         line-height: 2.5;
+
     }
 
     &__item {
@@ -1059,7 +1408,11 @@ footer {
     &__link {
         text-decoration: none;
         color: $green;
-        font-size: 1.8rem;
+        font-size: 1.8rem;   
+        transition: 0.3s;     
+        &:hover {
+            color: $orange;
+        }
     }
 
     &__contact {
@@ -1067,20 +1420,12 @@ footer {
         flex-direction: column;
         align-items: flex-end;
         justify-content: space-between;
-        margin-top: 6.3rem;
+        margin-top: 6.7rem;
     }
 
-    &__contact-item {
-        display: block;
-        text-decoration: none;
-        color: $green;
-        &_tel {
-            font-size: 2.7rem;
-        }
-        &_mail {
-            font-size: 1.8rem;
-            margin-top: 3.3rem;
-        }
+    &__tel {
+        font-size: 2.7rem;
+        margin-bottom: 3.2rem;
     }
 
     &-social {
@@ -1113,6 +1458,10 @@ footer {
             &_inst {
                 background-image: url(../images/inst.svg);
                 background-size: 1.8rem;
+            }            
+            
+            &:hover {
+                opacity: 1;
             }
         }
     }
@@ -1138,4 +1487,25 @@ footer {
     }
 }
 
-
+@keyframes shadow {
+    0% {
+        box-shadow: 0 0 0 0 rgba($green, 0.5);
+    }
+    50% {
+        box-shadow: 20px 20px 33px 0px rgba($green, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba($green, 0.5);
+    }
+    @media (max-width: $r_tab) {
+        0% {
+            box-shadow: 0 0 0 0 rgba($green, 0.5);
+        }
+        50% {
+            box-shadow: 20px 20px 33px 0px rgba($green, 0.5);
+        }
+        100% {
+            box-shadow: 0 0 0 0 rgba($green, 0.5);
+        }
+    }
+}
