@@ -12,7 +12,6 @@ var swiper = new Swiper(".offerSwiper", {
         spaceBetween: 20,
         slidesPerGroup: 3,
         loop: true,
-        loopFillGroupWithBlank: true,
         pagination: {
             el: ".swiper-pagination",
             clickable: true,
@@ -72,7 +71,7 @@ var swiper = new Swiper(".trendsSwiper", {
                 slidesPerGroup: 1,
                 spaceBetween: 20
             },
-            320: {
+            500: {
                 slidesPerView: 2,
                 slidesPerGroup: 2,
                 spaceBetween: 20

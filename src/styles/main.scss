@@ -9,10 +9,9 @@ $font-jost: 'Jost', sans-serif;
 $font-cormorant: 'Cormorant', serif;
 
 $r_minmob: 320px;
-$r_mob360: 360px;
-$r_mob360: 400px;
-$r_mob360: 500px;
-$r_mob360: 600px;
+$r_mob336: 336px;
+$r_mob400: 400px;
+$r_mob500: 500px;
 $r_tab: 768px;
 $r_tab_900: 900px;
 $r_desk: 1000px;
@@ -26,6 +25,9 @@ $r_desk_ful_1750: 1750px;
 
 html {
     font-size: 10px;
+    @media (max-width: $r_mob500) {
+        font-size: 8px;
+    }
 }
 
 body {
@@ -49,6 +51,14 @@ body {
     @media (max-width: $r_desk_1280) {
         gap: 3.5%;
     }
+    @media (max-width: $r_mob500) {
+        padding-top: 1.9rem;
+        padding-right: 1.8rem;
+    }
+    @media (max-width: $r_mob336) {
+        margin: 0 auto 1.4rem;
+    }
+
 
     &__navigation {
         flex-grow: 1;        
@@ -111,7 +121,7 @@ body {
         border-radius: 100%;
         background-color: $orange;
         background-image: url(../images/cart.svg);
-        background-size: 1.6rem 1.4rem;
+        background-size: 45%;
         background-repeat: no-repeat;
         background-position: center center;
         position: relative;
@@ -119,6 +129,10 @@ body {
         padding: 0;
         transition: 0.3s;
         cursor: pointer;
+        @media (max-width: $r_mob500) {
+            width: 4.5rem;
+            height: 4.5rem;
+        }
         &:hover {
             background-color: $green;
             border: 1px solid $green;
@@ -143,13 +157,15 @@ body {
         position: absolute;
         right: 0.6rem;
         top: 0.6rem;
-        @media (max-width: $r_desk_hd) {
-            color: $green;
+        @media (max-width: $r_mob500) {
+            color: #000000;
+            font-size: 1rem;
         }
     }
 
     &__phone, &__menu {
-        display: none;
+        display: none;            
+        background-size: 45%;
     }
 
     &__phone {
@@ -160,7 +176,6 @@ body {
             border-radius: 100%;
             background-color: $white;
             background-image: url(../images/phone.svg);
-            background-size: 1.6rem 1.4rem;
             background-repeat: no-repeat;
             background-position: center center;
             position: relative;
@@ -168,6 +183,10 @@ body {
             padding: 0;
             transition: 0.3s;
             opacity: 0.8;
+        }
+        @media (max-width: $r_mob500) {
+            height: 4.5rem;
+            width: 4.5rem;
         }
         &:hover {
             opacity: 1;
@@ -182,7 +201,6 @@ body {
             border-radius: 100%;
             background-color: $white;
             background-image: url(../images/menu.svg);
-            background-size: 1.6rem 1.4rem;
             background-repeat: no-repeat;
             background-position: center center;
             position: relative;
@@ -191,6 +209,10 @@ body {
             transition: 0.3s;
             opacity: 0.8;
             cursor: pointer;
+        }
+        @media (max-width: $r_mob500) {
+            height: 4.5rem;
+            width: 4.5rem;
         }
         &:hover {
             opacity: 1;
@@ -202,6 +224,12 @@ body {
             display: flex;
             align-items: center;
             gap: 2rem;
+        }
+        @media (max-width: $r_tab) {
+            gap: 1.5rem;
+        }
+        @media (max-width: $r_mob500) {
+            gap: 1.35rem;
         }
     }
 
@@ -227,9 +255,11 @@ body {
     padding-left: 15px;
     padding-right: 15px;
     margin-left: 22.5rem;
+    @media (max-width: $r_desk_ful_1750) {
+        margin: auto;
+    }
     @media (max-width: $r_tab) {
         max-width: 600px;
-        margin: auto;
     }
 }
 
@@ -257,12 +287,21 @@ body {
             text-align: center;
             margin-top: 3rem;
         }
+        @media (max-width: $r_mob500) {
+            margin-top: 2.6rem;
+        }
     }
 
     &__link {
         margin-top: 5rem;
         @media (max-width: $r_tab) {
             text-align: center;
+        }
+        @media (max-width: $r_mob500) {
+            margin-top: 3.9rem;
+        }
+        @media (max-width: $r_mob336) {
+            
         }
     }
 
@@ -274,6 +313,9 @@ body {
         @media (max-width: $r_desk_1120) {
             padding-top: 3rem;
             padding-bottom: 9rem;
+        }
+        @media (max-width: $r_mob336) {
+            padding-bottom: 4.9rem;
         }
     }
 
@@ -345,6 +387,10 @@ body {
             animation: shadow 5s linear infinite;
             border-radius: 100%;
         }
+        @media (max-width: $r_mob500) {
+            max-width: 220px;
+        }
+
     }
 
     &__text {
@@ -356,7 +402,12 @@ body {
         @media (max-width: $r_tab) {
             flex-basis: 100%;
             padding-top: 0;
-        }      
+        }  
+        @media (max-width: $r_mob500) {
+            flex-basis: 85%;
+            margin: auto;
+            letter-spacing: -0.4px;
+        }    
     }
 
     &__btn {
@@ -456,6 +507,13 @@ body {
         @media (max-width: $r_desk_1120) {
             bottom: -30px;
         }
+        @media (max-width: $r_mob500) {
+            bottom: inherit;
+            right: inherit;
+            top: 64px;
+            left: -12px;
+            width: 7rem;
+        }
     }
 
     &__avocado {
@@ -476,6 +534,11 @@ body {
             right: -50px;
             top: 150px;
         }
+        @media (max-width: $r_mob500) {
+            right: -44px;
+            top: 71px;
+            width: 10.5rem;
+        }
     }
 
     &__cucumber {
@@ -484,6 +547,16 @@ body {
         left: 690px;
         width: 8.5rem;
         z-index: -1;
+        @media (max-width: $r_tab) {
+            left: inherit;
+            right: 250px;
+        }
+        @media (max-width: $r_mob500) {
+            top: inherit;
+            right: -25px;
+            bottom: 175px;
+            width: 5.5rem;
+        }
     }
 
     &__pepper {
@@ -495,6 +568,12 @@ body {
         @media (max-width: $r_desk_ful_1750) {
             display: none;
         }
+        @media (max-width: $r_mob500) {
+            display: block;
+            top: 360px;
+            left: -0.4rem;
+            width: 4.6rem;
+        }
     }
 
     &__beans {
@@ -505,6 +584,9 @@ body {
         z-index: -1;
         @media (max-width: $r_desk_1120) {
             bottom: 30px;
+        }
+        @media (max-width: $r_mob500) {
+            display: none;
         }
     }
 }
@@ -524,6 +606,9 @@ body {
     @media (max-width: $r_tab) {
         text-align: center;
     }
+    @media (max-width: $r_mob336) {
+        font-size: 3.7rem;
+    }
     &__span {
         font-style: italic;
     }
@@ -531,15 +616,26 @@ body {
     &_block {
 
         margin-left: -2px;
-
+        @media (max-width: $r_mob500) {
+            margin-left: 0px;
+            letter-spacing: 0.2px;
+        }
         .title__span {
             display: block;
+        }
+
+        @media (max-width: $r_mob336) {
+            margin-left: -3px;
         }
     }
 
     &_about {
         margin-left: 7px;
         letter-spacing: 0.8px;
+        @media (max-width: $r_mob500) {
+            letter-spacing: 0.6px;
+            margin-left: 0;
+        }
     }
 }
 
@@ -555,6 +651,14 @@ body {
         @media (max-width: $r_desk_1280) {
             font-size: 1.6rem;
         }
+        @media (max-width: $r_tab) {
+            text-align: center;
+        }
+        @media (max-width: $r_mob500) {
+            line-height: 1.4;
+            font-weight: 600;
+            letter-spacing: -0.3px;
+        }
     }
 
     &_size_m {
@@ -562,6 +666,14 @@ body {
         line-height: 1.5;
         @media (max-width: $r_desk_1280) {
             font-size: 2.2rem;
+        }
+        @media (max-width: $r_tab) {
+            text-align: center;
+        }
+        @media (max-width: $r_mob500) {
+            font-size: 1.6rem;
+            letter-spacing: -0.3px;
+            font-weight: 600;
         }
     }
 }
@@ -580,6 +692,9 @@ body {
     transition: 0.3s;
     @media (max-width: $r_desk_1280) {
         font-size: 1.4rem;
+    }
+    @media (max-width: $r_mob336) {
+        padding: 2.2rem 3.5rem;
     }
     &:hover {
         background-color: $dark-orange;
@@ -606,7 +721,10 @@ body {
         }
         @media (max-width: $r_desk_1120) {
             margin: auto;
-        } 
+        }
+        @media (max-width: $r_tab_900) {
+            padding: 1.9rem 3rem;
+        }  
     }
 }
 
@@ -617,12 +735,20 @@ body {
     @media (max-width: $r_desk_1280) {
         padding-bottom: 8rem;
     }
+    @media (max-width: $r_mob500) {
+        padding-bottom: 5.8rem;
+    }
     
     &__text {
         max-width: 690px;
         margin-top: 5.8rem;
         @media (max-width: $r_tab) {
             text-align: center;
+        }
+        @media (max-width: $r_mob336) {
+            margin-top: 3.4rem;
+            margin-left: 17px;
+            max-width: 255px;
         }
     }
 
@@ -636,6 +762,9 @@ body {
         margin: 0 auto;
         padding-top: 3.3rem;
         padding-bottom: 6rem;
+    }
+    @media (max-width: $r_mob500) {
+        max-width: 210px;
     }
 }
 
@@ -666,10 +795,21 @@ body {
             @media (max-width: $r_desk_hd) {
                 height: 400px;
             }
+            @media (max-width: $r_mob500) {
+                height: 239px;
+                text-align: center;
+            }
+            @media (max-width: $r_mob500) {
+                background-size: 133px 153px;
+                background-position-x: 17px;
+            }
             &:hover {
                 .swiper-slide__hover {
                     height: 233px;
                     opacity: 1;
+                    @media (max-width: $r_mob500) {
+                        height: auto;
+                    }
                 }       
                 &::after {
                 content: '';
@@ -699,6 +839,9 @@ body {
 
         &_steaks {
             background-image: url(../images/steaks.png);
+            @media (max-width: $r_mob500) {
+                background-position-x: 30px;
+            }
         }
 
         &__title {
@@ -715,7 +858,13 @@ body {
             }   
             @media (max-width: $r_tab) {
                 text-align: center;
-            }     
+                font-size: 2rem;
+                min-height: 30px;
+            } 
+            @media (max-width: $r_mob500) {
+                font-size: 1.75rem;
+                margin-top: 1.75rem;
+            }    
 
         }
 
@@ -732,10 +881,15 @@ body {
             @media (max-width: $r_tab) {
                 margin-top: 1.5rem;
                 margin-bottom: 0;
-            }
-            @media (max-width: $r_tab) {
+                min-height: 55px;                
                 text-align: center;
-            } 
+                font-size: 1.3rem;
+            }
+            @media (max-width: $r_mob336) {
+                font-size: 1.5rem;
+                max-width: 15rem;
+                margin: -0.4rem auto 0 auto;
+            }
         }
 
         &__price {
@@ -747,12 +901,19 @@ body {
             @media (max-width: $r_tab) {
                 text-align: center;
             } 
+            @media (max-width: $r_mob500) {
+                margin-top: -0.75rem;
+            }
         }
 
         &__hover {
             opacity: 0;
             height: 0;
             max-width: 280px;
+            @media (max-width: $r_mob500) {
+                height: auto;
+                opacity: 1;
+            }
         }
 
         &__text {
@@ -760,6 +921,9 @@ body {
             margin-top: 2.7rem;
             margin-bottom: 3.5rem;
             opacity: 0.7;
+            @media (max-width: $r_mob500) {
+                display: none;
+            }
         }
 
         &__link {
@@ -772,6 +936,14 @@ body {
             display: flex;
             align-items: center;
             gap: 2rem;
+            @media (max-width: $r_mob500) {
+                font-size: 1.25rem;
+                justify-content: center;
+                gap: 1rem;
+                margin-bottom: -2px;
+                margin-left: 1px;
+                letter-spacing: 0px;
+            }
             &::before {
                 content: "";
                 display: block;
@@ -784,7 +956,11 @@ body {
                 background-repeat: no-repeat;
                 background-position: center;
                 vertical-align: middle;
-                opacity: 0.8;               
+                opacity: 0.8;  
+                @media (max-width: $r_mob500) {
+                    width: 2.5rem;
+                    height: 2.5rem;
+                }             
             }
             
             &:hover {
@@ -801,6 +977,12 @@ body {
             @media (max-width: $r_desk) {
                 height: 222px;
             }  
+            @media (max-width: $r_tab) {
+                height: 170px;
+            } 
+            @media (max-width: $r_mob336) {
+                height: 95px;
+            }
         }
 
         &__image {
@@ -823,6 +1005,9 @@ body {
             }
             @media (max-width: $r_tab) {
                 margin-top: 1.5rem;
+            }
+            @media (max-width: $r_mob500) {
+                margin-top: 2.3rem;
             }
         }
     }
@@ -862,6 +1047,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    @media (max-width: $r_mob500) {
+        bottom: -40px;
+    }
 }
 
 .swiper-pagination-bullet-active {
@@ -877,7 +1065,7 @@ body {
 .counter {
     display: flex;
     @media (max-width: $r_tab) {
-        margin: auto;
+        display: none;
     } 
     @media (max-width: $r_desk_1120) {
         margin: auto;
@@ -947,6 +1135,10 @@ body {
         @media (max-width: $r_tab) {
             flex-direction: column;
         }
+        @media (max-width: $r_mob500) {
+            margin-top: 1.9rem;
+            gap: 6rem;
+        }
     }
 
     &__text {
@@ -960,6 +1152,7 @@ body {
         }
         @media (max-width: $r_tab) {
             flex-basis: 10rem;
+            margin-left: 0;
         }
     }
 
@@ -977,6 +1170,9 @@ body {
         @media (max-width: $r_desk_1120) {
             gap: 4.7rem;
         }
+        @media (max-width: $r_mob500) {
+            gap: 5rem;
+        }
     }
 
     &__item {
@@ -985,6 +1181,11 @@ body {
         justify-content: center;
         align-items: center;
         gap: 1.7rem;
+        @media (max-width: $r_mob500) {
+            font-size: 1.75rem;
+            font-weight: 700;
+            gap: 1.1rem;
+        }
         &::before {
             content: '';
             width: 84px;
@@ -993,26 +1194,28 @@ body {
             border-radius: 100%;
             background-repeat: no-repeat;
             background-position: center center;
+            background-size: 51%;
+            @media (max-width: $r_mob500) {
+                width: 58px;
+                height: 58px;
+            }
         }        
         
         &_health {
             &::before{
                 background-image: url(../images/fruits.svg);
-                background-size: 44px 41px;
             }
         }
 
         &_traditions {
             &::before{
                 background-image: url(../images/traditional.svg);
-                background-size: 40px 40px;
             }
         }
 
         &_taste {
             &::before{
                 background-image: url(../images/good.svg);
-                background-size: 45px 39px;
             }
         }
     }
@@ -1026,9 +1229,16 @@ body {
     @media (max-width: $r_desk) {
         margin-top: 7rem;
     }
+    @media (max-width: $r_mob500) {
+        margin-top: 6.9rem;
+    }
     &__text {
-        margin-top: 38px;
-        margin-bottom: -11px;
+        margin-top: 3.8rem;
+        margin-bottom: -1.1rem;
+        @media (max-width: $r_mob500) {
+            margin-top: 2.4rem;
+            margin-bottom: 2rem;
+        }
     }
 }
 
@@ -1099,9 +1309,10 @@ h1 {
     gap: 2rem;
     align-items: center;
     margin-top: 8.5rem;
-    flex-wrap: wrap;
     @media (max-width: $r_desk_1450) {
         margin-top: 5rem;
+        flex-wrap: wrap;
+        justify-content: center;
     } 
     @media (max-width: $r_tab) {
         margin-top: 3rem;
@@ -1113,6 +1324,9 @@ h1 {
     &__item {
         flex-basis: 230px;
         text-align: center;
+        @media (max-width: $r_tab) {
+            flex-basis: 200px;
+        } 
     }
     &__link {
         text-decoration: none;
@@ -1123,6 +1337,9 @@ h1 {
         border-radius: 3.5rem;
         padding: 2.4rem 0;
         display: block;
+        @media (max-width: $r_tab) {
+            padding: 2rem 0;
+        } 
         &:hover {
             border: 1px solid $orange;
             color: $orange;
@@ -1141,12 +1358,13 @@ h1 {
     @media (max-width: $r_tab) {
         margin-top: 3rem;
         grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
     } 
     &__item {
         border: 1px solid rgba(39, 48, 15, 0.4);
         border-radius: 2rem;
         box-sizing: border-box;
-        padding: 3.2rem 0 0 0;
+        padding: 0.7rem 1rem;
         z-index: 0;
         background-repeat: no-repeat;
         background-size: cover;
@@ -1164,33 +1382,46 @@ h1 {
         font-weight: 700;
         font-family: $font-cormorant;
         color: $green;
-        margin: 1.3rem 0 1.5rem 3.1rem;
-        @media (max-width: $r_desk_1120) {
-            margin-left: 0;        
-            min-height: 7rem;
-            margin: 1.3rem 0 0 3.1rem;
+        margin: 1.3rem 0 1.5rem 1rem;
+        padding: 1rem;
+        @media (max-width: $r_desk_1280) {
+            margin: auto;        
+            min-height: 8rem;
+        } 
+        @media (max-width: $r_tab) {
+            font-size: 2rem;
+            min-height: 4rem;
         } 
     }
 
     &__description {
-        margin: 0 1rem 0 3.2rem;
+        margin-left: 2rem;
+        margin-top: -1rem;
         max-width: 24rem;
         font-size: 1.6rem;
         line-height: 1.5;
         min-height: 5.5rem;
         opacity: 0.7;
-        @media (max-width: $r_desk_1120) {
+        @media (max-width: $r_desk_1280) {
             margin: auto;        
             min-height: 8rem;
+        } 
+        @media (max-width: $r_tab) {
+            font-size: 1.3rem;
+            padding: 0 1rem;
+            min-height: 5rem;
         } 
     }    
     
     &__price {
         font-size: 2.4rem;
-        margin: 0.75rem 0 0 3.1rem;
+        margin-left: 2rem;
+        margin-top: -1rem;
         @media (max-width: $r_desk_1120) {
             margin: auto;
-            margin: -0.7rem 0 0 3.1rem;
+        } 
+        @media (max-width: $r_tab) {
+            font-size: 2rem;
         } 
     }
     &__cover {
@@ -1199,6 +1430,10 @@ h1 {
         width: 100%;
         height: 204px;
         text-align: center;
+        padding-top: 1.5rem;
+        @media (max-width: $r_tab) {
+            height: 150px;
+        } 
     }
     &__image {
         width: 98%;
@@ -1211,7 +1446,7 @@ h1 {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin: 2.9rem 2.8rem 3.9rem 3.1rem;
+        margin: 3.1rem 1.9rem;
         @media (max-width: $r_desk_1350) {
             flex-direction: column;
             gap: 1.5rem;
@@ -1233,6 +1468,9 @@ h1 {
     @media (max-width: $r_desk_1120) {
         margin-top: 7rem;
     } 
+    @media (max-width: $r_tab) {
+        margin-left: 0;
+    } 
     &__flex {
         margin: 5.6rem 10rem 0rem 12.9rem;
         display: flex;
@@ -1244,6 +1482,7 @@ h1 {
         @media (max-width: $r_tab) {
             margin: 2rem 0rem 0rem 0rem;
             gap: 2rem;
+            flex-direction: column;
         } 
     }
     &__text_row1 {
@@ -1286,6 +1525,10 @@ h1 {
         gap: 3rem;
         padding-left: 0.2rem;
         cursor: pointer;
+        @media (max-width: $r_tab) {
+            margin: auto;
+            padding-top: 3rem;
+        } 
     }
 
     &__image1 {
@@ -1386,6 +1629,9 @@ h1 {
             @media (max-width: $r_desk) {
                 width: 58.9rem;
             }
+            @media (max-width: $r_tab) {
+                width: 44rem;
+            } 
         }
 
         &__ul {
@@ -1409,6 +1655,9 @@ h1 {
             font-size: 2.4rem;
             color: $green;
             font-weight: 600;
+            @media (max-width: $r_tab) {
+                font-size: 1.8rem;
+            } 
             &::before {
                 content: "";
                 display: inline-block;
@@ -1417,6 +1666,9 @@ h1 {
                 background-position: center;
                 vertical-align: middle;
                 margin-right: 3rem; 
+                @media (max-width: $r_tab) {
+                    margin-right: 1rem;
+                } 
             }
             &_tel {
                 &::before {     
@@ -1470,6 +1722,10 @@ h1 {
         border-radius: 2rem;
         margin-bottom: 3.2rem;
         padding-left: 3rem;
+        @media (max-width: $r_tab) {
+            width: 29.5rem;
+            height: 5rem;
+        } 
         &:focus {
             outline: none;
             border: 1px solid rgba($green, 1);
@@ -1535,6 +1791,12 @@ footer {
         }
         &__link1 {
             flex-basis: 21.5%;
+            @media (max-width: $r_tab_900) {
+                display: none;
+            } 
+            @media (max-width: $r_tab) {
+                display: block;;
+            } 
         }
     }
 
@@ -1560,7 +1822,7 @@ footer {
         line-height: 2.5;
         @media (max-width: $r_tab) {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
             width: 100%;    
         } 
     }
