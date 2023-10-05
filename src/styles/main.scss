@@ -672,7 +672,7 @@ body {
         }
         @media (max-width: $r_mob500) {
             font-size: 1.6rem;
-            letter-spacing: -0.3px;
+            letter-spacing: 0px;
             font-weight: 600;
         }
     }
@@ -725,6 +725,10 @@ body {
         @media (max-width: $r_tab_900) {
             padding: 1.9rem 3rem;
         }  
+        @media (max-width: $r_mob336) {
+            padding: 1.8rem 3.7rem;
+            font-size: 1.25rem;
+        }
     }
 }
 
@@ -770,6 +774,16 @@ body {
 
 .swiper {
     overflow: initial;
+    &_category {
+        @media (min-width: $r_mob500) {
+            display: none;
+        }
+        @media (max-width: $r_mob500) {
+            display: block;
+            padding: 0;
+            margin-top: 3.75rem;
+        }
+    }
     &-slide{
         border: 1px solid rgba(39, 48, 15, 0.4);
         border-radius: 2rem;
@@ -824,10 +838,18 @@ body {
                 }
             }
         }
-
+        
         &:hover {
             box-shadow: 0 0 0 2px rgba($green, 0.4) inset;
-            }       
+        }
+        
+        &_category {
+            border: none;
+            padding: 1.75rem 0 0 0;
+            &:hover {
+                box-shadow: none;
+            }
+        }
 
         &_milk {
             background-image: url(../images/bottle-of-milk.png);
@@ -1019,6 +1041,14 @@ body {
         }
     }
 
+    &_trends{
+        .swiper-horizontal > .swiper-pagination-bullets {
+            @media (max-width: $r_mob500) {
+                bottom: -20px;
+            }
+        }
+    }
+
     &-button-prev, &-button-next {
         top: -6rem;
         right: -0.8rem;
@@ -1038,6 +1068,10 @@ body {
     &-button-prev {
         left: initial;
         right: 7.2rem;
+    }
+
+    &-wrapper {
+        width: 38%;
     }
 }
 
@@ -1257,12 +1291,21 @@ h1 {
     @media (max-width: $r_tab) {
         margin-top: 4rem;
     } 
+    @media (max-width: $r_mob336) {
+        font-size: 3.75rem;
+        margin-top: 2.9rem;
+        text-align: center;
+    }
+
 }
 
 .catalog {
     &__text{    
         margin-top: 3.1rem;
         letter-spacing: 0.1rem;
+        @media (max-width: $r_mob500) {
+            margin-top: 2.2rem;
+        }
     }
     &__btn {
         color: $green;
@@ -1279,6 +1322,12 @@ h1 {
         @media (max-width: $r_desk_1120) {
             margin-top: 3rem;
         } 
+        @media (max-width: $r_mob336) {
+            margin-top: 5rem;
+            font-size: 1.25rem;
+            padding-left: 1.1rem;
+            letter-spacing: 0.1rem;
+        }
         
         &::before {
             content: "";
@@ -1290,7 +1339,10 @@ h1 {
             background-repeat: no-repeat;
             background-position: center;
             vertical-align: middle;
-            margin-right: 14px;          
+            margin-right: 14px; 
+            @media (max-width: $r_mob336) {
+                margin-right: 1.25rem;
+            }         
         }
 
         &:hover {
@@ -1317,6 +1369,9 @@ h1 {
     @media (max-width: $r_tab) {
         margin-top: 3rem;
     } 
+    @media (max-width: $r_mob500) {
+        display: none;
+    }
     &:hover {
         opacity: 1;
     }
@@ -1345,6 +1400,12 @@ h1 {
             color: $orange;
         }
     }
+
+    &_swiper {
+        font-size: 1.25rem;
+        padding: 1.6rem 1rem;
+        text-align: center;
+    }
 }
 
 .catalog-grid {
@@ -1360,6 +1421,9 @@ h1 {
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
     } 
+    @media (max-width: $r_mob500) {
+        margin-top: 2.5rem;
+    }
     &__item {
         border: 1px solid rgba(39, 48, 15, 0.4);
         border-radius: 2rem;
@@ -1392,6 +1456,12 @@ h1 {
             font-size: 2rem;
             min-height: 4rem;
         } 
+        @media (max-width: $r_mob336) {
+            font-size: 1.75rem;
+            min-height: 2.8rem;
+            margin-top: 1.2rem;
+            padding: 0;
+        }
     }
 
     &__description {
@@ -1411,6 +1481,10 @@ h1 {
             padding: 0 1rem;
             min-height: 5rem;
         } 
+        @media (max-width: $r_mob336) {
+            font-size: 1.25rem;
+            min-height: 6.45rem;
+        }
     }    
     
     &__price {
@@ -1423,6 +1497,10 @@ h1 {
         @media (max-width: $r_tab) {
             font-size: 2rem;
         } 
+        @media (max-width: $r_mob336) {
+            font-size: 1.5rem;
+            margin-top: 0;
+        }
     }
     &__cover {
         position: relative;
@@ -1434,12 +1512,19 @@ h1 {
         @media (max-width: $r_tab) {
             height: 150px;
         } 
+        @media (max-width: $r_mob336) {
+            height: 65px;
+            padding-top: 0;
+        }
     }
     &__image {
         width: 98%;
         max-width: 351px;
         height: 100%;
         object-fit: contain;
+        @media (max-width: $r_mob336) {
+            max-width: 65px;
+        }
     }
         
     &__footer {
@@ -1456,6 +1541,14 @@ h1 {
             margin-top: 1.5rem;
             margin-bottom: 2rem;
         } 
+        @media (max-width: $r_mob336) {
+            margin: 1.7rem 0 1.3rem 0;
+        }
+    }
+    &_other {
+        @media (max-width: $r_mob336) {
+            display: none;
+        }
     }
 }
 
@@ -1484,6 +1577,9 @@ h1 {
             gap: 2rem;
             flex-direction: column;
         } 
+        @media (max-width: $r_mob336) {
+            gap: 0;
+        }
     }
     &__text_row1 {
         flex-basis: 47.1%;
@@ -1529,6 +1625,11 @@ h1 {
             margin: auto;
             padding-top: 3rem;
         } 
+        @media (max-width: $r_mob336) {
+            padding-top: 3.6rem;
+            max-width: 25rem;
+            gap: 2.5rem;
+        }
     }
 
     &__image1 {
@@ -1542,7 +1643,11 @@ h1 {
         background-image: url(../images/mastercard.svg);
         transform: scale(1);       
         opacity: 0.4; 
-        transition: 0.3s;     
+        transition: 0.3s;  
+        @media (max-width: $r_mob336) {
+            width: 5rem;
+            height: 3rem;
+        }   
         &:hover {            
             transform: scale(1.05);
             opacity: 1;
@@ -1562,6 +1667,10 @@ h1 {
         transform: scale(1);
         opacity: 0.4;
         transition: 0.3s; 
+        @media (max-width: $r_mob336) {
+            width: 7rem;
+            height: 2.1rem;
+        }
         &:hover {
             transform: scale(1.05);
             opacity: 1;
@@ -1580,6 +1689,10 @@ h1 {
         transform: scale(1);
         opacity: 0.4; 
         transition: 0.3s;
+        @media (max-width: $r_mob500) {
+            width: 8.3rem;
+            height: 2.1rem;
+        }
         &:hover {
             transform: scale(1.05);
             opacity: 1;
@@ -1595,6 +1708,9 @@ h1 {
     @media (max-width: $r_tab) {
         margin-top: 3rem;
     } 
+    @media (max-width: $r_mob336) {
+        margin-top: 6.3rem;
+    }
     &-box {
         display: flex;
         align-items: center;
@@ -1619,6 +1735,12 @@ h1 {
                 max-width: 95rem;
                 text-align: center;
             } 
+            @media (max-width: $r_mob336) {
+                margin-top: 3.8rem;
+                line-height: 1.35;
+                letter-spacing: -0.1rem;
+                font-weight: 600;
+            }
         }
         &__form {
             flex-basis: 58.9rem;
@@ -1632,6 +1754,11 @@ h1 {
             @media (max-width: $r_tab) {
                 width: 44rem;
             } 
+            @media (max-width: $r_mob336) {
+                max-width: 36rem;
+                margin-top: 3.75rem;
+                max-height: 50.5rem;
+            }
         }
 
         &__ul {
@@ -1643,6 +1770,12 @@ h1 {
                 margin-top: 2rem;
                 display: flex;
                 justify-content: space-around;
+            }
+            @media (max-width: $r_mob336) {
+                margin-top: -0.2rem;
+            }
+            @media (max-width: $r_mob336) {
+                justify-content: space-between;
             }
         }
 
@@ -1658,6 +1791,10 @@ h1 {
             @media (max-width: $r_tab) {
                 font-size: 1.8rem;
             } 
+            @media (max-width: $r_mob336) {
+                font-size: 1.6rem;
+                letter-spacing: -0.07rem;
+            }
             &::before {
                 content: "";
                 display: inline-block;
@@ -1669,6 +1806,9 @@ h1 {
                 @media (max-width: $r_tab) {
                     margin-right: 1rem;
                 } 
+                @media (max-width: $r_mob336) {
+                    margin-right: 1.2rem;
+                }
             }
             &_tel {
                 &::before {     
@@ -1676,6 +1816,10 @@ h1 {
                     background-image: url(../images/tel.svg);
                     width: 2.9rem;
                     height: 2.5rem;
+                    @media (max-width: $r_mob336) {
+                        width: 2.4rem;
+                        height: 2.25rem;
+                    }
                 }
             }
 
@@ -1685,6 +1829,10 @@ h1 {
                     background-image: url(../images/mail.svg);
                     width: 2.9rem;
                     height: 1.9rem;
+                    @media (max-width: $r_mob500) {
+                        width: 2.2rem;
+                        height: 1.5rem;
+                    }
                 }
             }
         }
@@ -1696,6 +1844,11 @@ h1 {
     border-radius: 2rem;
     padding-top: 3.3rem;
     padding-left: 5.4rem;
+    @media (max-width: $r_mob336) {
+        border: 1px solid rgba($green, 0.4);
+        padding-top: 2.4rem;
+        padding-left: 1.2rem;
+    }
 
     &__form {
         margin-left: 0.5rem;
@@ -1706,6 +1859,12 @@ h1 {
         font-family: $font-cormorant;  
         margin-top: 0;
         margin-left: 0.4rem;
+        @media (max-width: $r_mob336) {
+            text-align: center;
+            letter-spacing: -0.1rem;
+            margin-left: -1rem;
+            margin-bottom: 2.875rem;
+        }
     }
 
     &__label {
@@ -1726,6 +1885,11 @@ h1 {
             width: 29.5rem;
             height: 5rem;
         } 
+        @media (max-width: $r_mob336) {
+            width: 30rem;
+            margin-bottom: 1.8rem;
+            padding-left: 2rem;
+        }
         &:focus {
             outline: none;
             border: 1px solid rgba($green, 1);
@@ -1740,6 +1904,11 @@ h1 {
         padding: 2.4rem 4.8rem;
         margin-top: 1rem;
         cursor: pointer;
+        @media (max-width: $r_mob336) {
+            padding: 2.1rem 4rem;
+            margin-top: 1.875rem;
+            margin-left: 5.125rem;
+        }
     }
 
     &__check {
@@ -1749,6 +1918,14 @@ h1 {
         max-width: 36rem;
         margin-top: 1.4rem;
         margin-bottom: 4rem;
+        @media (max-width: $r_mob336) {
+            font-size: 1.25rem;
+            line-height: 1.5;
+            max-width: 29rem;
+            margin-top: 1.9rem;
+            margin-bottom: 3.7rem;
+            margin-left: 4.2rem;
+        }
     }
     &__link {
         color: rgba($green, 0.6);
@@ -1789,6 +1966,9 @@ footer {
             margin-top: 8rem;
             flex-direction: column;
         }
+        @media (max-width: $r_mob336) {
+            margin-top: 9.8rem;
+        }
         &__link1 {
             flex-basis: 21.5%;
             @media (max-width: $r_tab_900) {
@@ -1814,6 +1994,9 @@ footer {
         @media (max-width: $r_tab) {
             display: block;
         }
+        @media (max-width: $r_mob336) {
+            width: 15rem;
+        }
     }
 
     &__list {
@@ -1825,10 +2008,17 @@ footer {
             justify-content: space-around;
             width: 100%;    
         } 
+        @media (max-width: $r_mob336) {
+            margin-bottom: 0;
+        }
     }
 
     &_adress {
         flex-direction: column;
+            @media (max-width: $r_mob336) {
+                margin-top: 10px;
+                line-height: 2.2;
+        }
     }
 
     &__item {
@@ -1839,13 +2029,22 @@ footer {
         @media (max-width: $r_tab) {
             text-align: center;
         }
+        @media (max-width: $r_mob336) {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
     }
 
     &__link {
         text-decoration: none;
         color: $green;
         font-size: 1.8rem;   
-        transition: 0.3s;     
+        transition: 0.3s; 
+        @media (max-width: $r_mob336) {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: auto;
+        }    
         &:hover {
             color: $orange;
         }
@@ -1865,6 +2064,12 @@ footer {
     &__tel {
         font-size: 2.7rem;
         margin-bottom: 3.2rem;
+        @media (max-width: $r_mob336) {
+            font-size: 3.75rem;
+            margin-bottom: 0.8rem;
+            margin-top: 1.25rem;
+            font-weight: 400;
+        }
     }
 
     &-social {
@@ -1875,6 +2080,11 @@ footer {
         width: 21rem;
         padding: 0;
         margin-top: 2.9rem;
+        @media (max-width: $r_mob336) {
+            gap: 2.875rem;
+            width: 26.2rem;
+            margin: 4.875rem auto 3.375rem auto;
+        }
         &__link {
             display: block;
             background-repeat: no-repeat;
@@ -1884,19 +2094,22 @@ footer {
             height: 4.6rem;
             border: 0.2rem solid $green;
             border-radius: 100%;
-            opacity: 0.8;    
+            opacity: 0.8;  
+            background-size: 45%;
+            @media (max-width: $r_mob336) {
+                width: 6rem;
+                height: 6rem;
+                border: 0.29rem solid $green;
+            }  
 
             &_fb {
                 background-image: url(../images/fb.svg);
-                background-size: 1.8rem;
             }
             &_vk {
                 background-image: url(../images/vk.svg);
-                background-size: 2.3rem;
             }
             &_inst {
                 background-image: url(../images/inst.svg);
-                background-size: 1.8rem;
             }            
             
             &:hover {
@@ -1921,12 +2134,20 @@ footer {
         @media (max-width: $r_tab) {
             margin: 0;
         }
+        @media (max-width: $r_mob336) {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
     }
 
     &__author {
         @media (max-width: $r_tab) {
             margin: 0;
             margin-top: 1rem;
+        }
+        @media (max-width: $r_mob336) {
+            font-size: 1.25rem;
+            font-weight: 600;
         }
         a {
             color: $green;

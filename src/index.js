@@ -84,3 +84,12 @@ var swiper = new Swiper(".trendsSwiper", {
         }
 
     });
+
+var swiper = new Swiper(".CategorySwiper", {
+    slidesPerView: "auto",
+    spaceBetween: 10,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+});
