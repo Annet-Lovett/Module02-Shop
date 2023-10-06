@@ -417,6 +417,7 @@ body {
         position: absolute;
         color: $green;
         text-align: left;
+        cursor: pointer;
         &:hover {
             &::before {
                 background-color: $orange;
@@ -782,6 +783,7 @@ body {
             display: block;
             padding: 0;
             margin-top: 3.75rem;
+            overflow-x: hidden;
         }
     }
     &-slide{
@@ -838,7 +840,7 @@ body {
                 }
             }
         }
-        
+
         &:hover {
             box-shadow: 0 0 0 2px rgba($green, 0.4) inset;
         }
