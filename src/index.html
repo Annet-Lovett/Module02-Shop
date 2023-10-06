@@ -41,7 +41,7 @@
 
             <div class="header__buttons">
                 <a href="tel:+79453425555" class="header__phone"></a>
-                <button href="#" class="header__menu"></button>
+                <button href="#" class="header__menu" onclick="openModal()"></button>
                 <button href="#" class="header__cart">
                     <span class="header__counter">0</span>
                 </button>
@@ -621,6 +621,49 @@
             </div>
         </div>
     </footer>
+
+    <div class="modal" id="modal">
+        <ul class="header__nav header__nav_modal">
+            <li class="header__item">
+                <a href="" class="header__link">Наша продукция</a>
+            </li>
+
+            <li class="header__item">
+                <a href="" class="header__link">О компании</a>
+            </li>
+
+            <li class="header__item">
+                <a href="" class="header__link">Новинки</a>
+            </li>
+
+            <li class="header__item">
+                <a href="" class="header__link">Каталог</a>
+            </li>
+
+            <li class="header__item">
+                <a href="" class="header__link">Доставка</a>
+            </li>
+
+            <li class="header__item">
+                <a href="" class="header__link">Контакты</a>
+            </li>
+        </ul>
+        <button class="burger-close" onclick="closeModal()"></button>
+    </div>
+
+    <script>
+
+        // Menu
+
+        function openModal() {
+            document.getElementById("modal").style.top = "0px";
+        }
+
+        function closeModal() {
+            document.getElementById("modal").style.top = "-500px";
+        }
+
+    </script>
     
 </body>
 </html>
