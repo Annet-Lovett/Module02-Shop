@@ -220,6 +220,7 @@ body {
     }
 
     &__buttons {
+        position: relative;
         @media(max-width: $r_desk_hd) {
             display: flex;
             align-items: center;
@@ -233,8 +234,84 @@ body {
         }
     }
 
+    &__dropdown {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        border-radius: 20px;
+        background-color: $white;
+        right: -42px;
+        bottom: -121px;
+        width: 233px;
+        padding: 11px 20px;
+        z-index: 1;
+        box-shadow: 0px 0px 33px 0px rgba($green, 0.2);
+        gap: 18px;
+        @media (max-width: $r_desk_ful_1750) {
+            right: 0px;
+        }
+        @media (max-width: $r_mob500) {
+            bottom: -100px;
+            width: 200px;
+        }
+        &::after {
+            content: '';
+            border: 15px solid transparent;
+            border-bottom: 30px solid $white;
+            position: absolute;
+            top: -28px;
+            right: 47px;
+            @media (max-width: $r_desk_ful_1750) {
+                border: 8px solid transparent;
+                border-bottom: 16px solid #ffffff;
+                top: -22px;
+                right: 20px;
+            }
+        }
+    }
+
+    &__cover {
+        position: relative;
+        width: 4rem;
+        height: 6rem;
+        overflow: hidden;
+    }
+
+    &__img-cover {
+        position: absolute;
+        height: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        object-fit: cover;
+    }
+
+    &__product {
+        display: inline-block;
+        color: $green;
+        text-decoration: none;
+        border-bottom: 1px solid $green;
+    }
 }
 
+.close {
+    display: block;
+    cursor: pointer;
+    width: 12rpx;
+    height: 12px;
+    background-image: url(../images/close.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    &_main {
+        top: 2.1rem;
+        right: 2rem;
+    }
+}
 
 .logo {
     display: block;
@@ -489,6 +566,68 @@ body {
                 left: -26px;
             }
         }
+    }
+
+    &__about {
+        position: absolute;
+        border-radius: 20px;
+        background-color: $white;
+        width: 180px;
+        padding: 13px 30px;
+        z-index: 1;
+        box-shadow: 0px 0px 33px 0px rgba($green, 0.2);
+        visibility: hidden;
+        @media (max-width: $r_desk_1120) {
+            display: none;
+        }
+        &_1 {
+            top: 100px;
+            left: 100px;
+            @media (max-width: $r_desk_1350) {
+                left: -75px;
+            }
+        }
+        &_2 {
+            bottom: -30px;
+            left: 190px;
+            @media (max-width: $r_desk_1350) {
+                bottom: -45px;
+                left: 80px;
+            }
+            @media (max-width: $r_desk_hd) {
+                left: 25px;
+            }
+        }
+        &_3 {
+            right: -111px;
+            bottom: 325px;
+            @media (max-width: $r_desk_ful_1750) {
+                right: 0px;
+            }
+            @media (max-width: $r_desk_1350) {
+                bottom: 300px;
+            }
+        }
+    }
+
+    &__title {
+        font-size: 24px;
+        font-family: $font-cormorant;
+        font-weight: 700;
+    }
+
+    &__description {
+        font-size: 14px;
+        max-width: 150px;
+        margin: 0;
+        margin-top: -17px;
+        line-height: 1.5;
+    }
+
+    &__price {
+        font-size: 16px;
+        margin-top: 14px;
+        margin-bottom: 18px;
     }
 
     &__food {
